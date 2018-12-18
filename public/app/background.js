@@ -4,6 +4,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
    chrome.tabs.query({active: true, currentWindow:true},
       function(tabs) {
          var activeTab = tabs[0];
+         console.log("clicked_browser_action", window.getSelection().toString());
          chrome.tabs.sendMessage(activeTab.id,
              {"message": "clicked_browser_action"}
          );
